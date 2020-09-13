@@ -17,7 +17,7 @@ namespace BoxNet
 
         private static List<SignedInGamer> GetLocalGamers(int maxLocalGamers)
         {
-            var localGamers = new List<SignedInGamer>(SignedInGamer.SignedInGamers);
+            var localGamers = new List<SignedInGamer>(Gamer.SignedInGamers);
             if (localGamers.Count > maxLocalGamers)
             {
                 localGamers.RemoveRange(maxLocalGamers, localGamers.Count - maxLocalGamers);

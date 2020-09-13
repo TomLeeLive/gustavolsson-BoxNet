@@ -13,14 +13,15 @@ namespace BoxNet
         public int Length { get { return (int)BaseStream.Length; } }
         public int Position { get { return (int)BaseStream.Position; } set { BaseStream.Position = value; } }
 
-        public void Write(Color value)
-        {
-            Write(value.PackedValue);
-        }
-
         public override void Write(double value)
         {
             base.Write(value);
+        }
+
+        /*
+        public void Write(Color value)
+        {
+            Write(value.PackedValue);
         }
 
         public void Write(Matrix value)
@@ -76,5 +77,7 @@ namespace BoxNet
             Write(value.Z);
             Write(value.W);
         }
+        */
     }
 }
+ 

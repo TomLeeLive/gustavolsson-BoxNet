@@ -25,16 +25,17 @@ namespace BoxNet
             }
         }
 
+        public override double ReadDouble()
+        {
+            return base.ReadDouble();
+        }
+
+        /*
         public Color ReadColor()
         {
             Color value = Color.TransparentBlack;
             value.PackedValue = ReadUInt32();
             return value;
-        }
-
-        public override double ReadDouble()
-        {
-            return base.ReadDouble();
         }
 
         public Matrix ReadMatrix()
@@ -83,5 +84,6 @@ namespace BoxNet
         {
             return new Vector4(ReadSingle(), ReadSingle(), ReadSingle(), ReadSingle());
         }
+        */
     }
 }

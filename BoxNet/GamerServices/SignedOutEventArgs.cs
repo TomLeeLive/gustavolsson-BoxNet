@@ -8,5 +8,6 @@ namespace BoxNet.GamerServices
 {
     public class SignedOutEventArgs
     {
+        public SignedInGamer Gamer { get; internal set; }
     }
 }

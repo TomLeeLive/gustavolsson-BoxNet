@@ -6,7 +6,17 @@ using System.Threading.Tasks;
 
 namespace BoxNet.GamerServices
 {
-    public class Gamer
+    public abstract class Gamer : IDisposable
     {
+        public static SignedInGamerCollection SignedInGamers { get; }
+
+        public string DisplayName { get; set; }
+        public string Gamertag { get; set; }
+        public bool IsDisposed { get; set; }
+
+        public void Dispose()
+        {
+            IsDisposed = true;
+        }
     }
 }

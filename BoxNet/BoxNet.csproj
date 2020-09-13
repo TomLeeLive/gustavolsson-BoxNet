@@ -48,7 +48,9 @@
     <Compile Include="GamerJoinedEventArgs.cs" />
     <Compile Include="GamerLeftEventArgs.cs" />
     <Compile Include="GamerServices\Gamer.cs" />
+    <Compile Include="GamerServices\GamerCollection.cs" />
     <Compile Include="GamerServices\SignedInGamer.cs" />
+    <Compile Include="GamerServices\SignedInGamerCollection.cs" />
     <Compile Include="GameStartedEventArgs.cs" />
     <Compile Include="HostChangedEventArgs.cs" />
     <Compile Include="InviteAcceptedEventArgs.cs" />

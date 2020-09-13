@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace BoxNet.GamerServices
 {
-    public class SignedInGamer
+    public sealed class SignedInGamer : Gamer
     {
+        public static Action<object, SignedOutEventArgs> SignedOut { get; internal set; }
     }
 }

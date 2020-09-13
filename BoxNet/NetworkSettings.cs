@@ -4,19 +4,20 @@ namespace BoxNet
 {
     public static class NetworkSettings
     {
-        private static string Id = string.Empty;
+        private static string gameAppId = null;
 
         public static string GameAppId
         {
             get
             {
-                if (Game.Instance == null)
+                if (gameAppId == null)
                 {
-                    throw new InvalidOperationException("Should only be called from within a MonoGame Game instance. For the master server, manually specify the GUID of the game to relay.");
+                    throw new InvalidOperationException($"The {nameof(NetworkSettings)}.{nameof(GameAppId)} must be set to a unique id for your game at start-up for BoxNet to function.");
                 }
-
+                return gameAppId;
+                /*
                 // Get guid
-                if (Id == string.Empty)
+                if (gameAppId == string.Empty)
                 {
                     var assembly = System.Reflection.Assembly.GetAssembly(Game.Instance.GetType());
                     if (assembly != null)
@@ -24,24 +25,21 @@ namespace BoxNet
                         var guidObjs = assembly.GetCustomAttributes(typeof(System.Runtime.InteropServices.GuidAttribute), false);
                         if (guidObjs != null && guidObjs.Length > 0)
                         {
-                            Id = ((System.Runtime.InteropServices.GuidAttribute)guidObjs[0]).Value;
+                            gameAppId = ((System.Runtime.InteropServices.GuidAttribute)guidObjs[0]).Value;
                         }
                     }
                 }
 
                 // No guid?
-                if (Id == string.Empty)
+                if (gameAppId == string.Empty)
                 {
-                    Id = "MonoGameApp";
+                    gameAppId = "MonoGameApp";
                 }
 
-                return Id;
+                return gameAppId;
+                */
             }
-
-            set
-            {
-                Id = value;
-            }
+            set { gameAppId = value; }
         }
 
         public static int Port = 14242;
