@@ -12,6 +12,7 @@ namespace BoxNet.GamerServices
 
         public string DisplayName { get; set; }
         public string Gamertag { get; set; }
+        public object Tag { get; set; }
         public bool IsDisposed { get; set; }
 
         public void Dispose()
